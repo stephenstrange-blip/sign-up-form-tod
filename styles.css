@@ -189,7 +189,7 @@ input:valid {
 
 .submit-btn:hover {
     background-color: rgb(89, 109, 72, .8);
-
+    cursor: pointer;
 }
 
 div>a:link,
