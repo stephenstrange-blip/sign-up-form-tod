@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'norsebold';
+    src: url('assets/font/norse-bold-webfont.woff2') format('woff2'),
+        url('assets/font/norse-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
-    /* border: 1px solid black; */
+    font-family: system-ui;
 }
 
 :root {
-    --left-padding: 3rem;
+    --left-padding: 3rem;                                                                                                                                                                                                                                   
 }
 
 body {
@@ -60,6 +69,7 @@ body {
     width: 5rem;
     height: 100%;
 }
+
 @media (max-width: 500px) {
     .logo img {
         display: none;
@@ -68,6 +78,7 @@ body {
 
 .logo-odin {
     font-size: 5rem;
+    font-family: "norsebold";
 }
 
 .bg-credit {
@@ -116,6 +127,7 @@ fieldset+div,
 fieldset+div+p {
     padding-top: 3rem;
 }
+
 fieldset+div+p>a:link {
     color: rgb(89, 109, 72);
     font-weight: bold;
@@ -144,19 +156,21 @@ p>input {
     padding: .2rem;
     padding-left: .6rem;
 }
-div > p > input:not(#password, #cfm-password) {
+
+div>p>input:not(#password, #cfm-password) {
     box-shadow: rgb(152, 152, 152, .3) 0 0 .4rem;
 }
 
-div > p > input:not(#password, #cfm-password):focus {
+div>p>input:not(#password, #cfm-password):focus {
     border-color: rgba(3, 118, 226, 0.8);
     box-shadow: rgb(3, 118, 226, 0.8) 0 0 .4rem;
 }
 
-input:valid{
+input:valid {
     border-color: rgba(0, 182, 0, 0.8);
-    box-shadow: rgba(0,182, 0, .8) 0 0 .4rem;
+    box-shadow: rgba(0, 182, 0, .8) 0 0 .4rem;
 }
+
 #password:invalid,
 #cfm-password:invalid {
     border-color: rgb(220, 0, 0, .8);
@@ -172,9 +186,10 @@ input:valid{
     transition-duration: .4s;
     border: none;
 }
+
 .submit-btn:hover {
     background-color: rgb(89, 109, 72, .8);
-    
+
 }
 
 div>a:link,
@@ -186,5 +201,3 @@ div>a:link,
 a:visited {
     color: rgb(72, 98, 168);
 }
-
-
