@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../css_reset.css">
+    <script src="signup.js"></script>
+</head>
+<body>
+    <div class="body-container">
+        <div class="background">
+            <div class="logo-container">
+                <div class="logo"></div>
+                <div class="logo-odin"></div>
+            </div>
+        </div>
+        <div clas="signup-container">
+            <p>
+                <div class="signup-message"></div>
+                <div class="signup-hook"></div>
+            </p>
+            <div class="signup-form">
+                <fieldset>
+                    <legend>Let's do this!</legend>
+                    <p>
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" name="first-name" required placeholder="Stephen" maxlength="20">
+                    </p>
+                    <p>
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" id="last-name" name="last-name" required placeholder="Strange" maxlength="20">
+                    </p>
+                    <p>
+                        <label for="email">EMAIL</label>
+                        <input type="mail" id="email" name="user-email" required placeholder="example@gmail.com">
+                    </p>
+                    <p>
+                        <label for="phone-num">PHONE NUMBER</label>
+                        <input type="tel" id="phone-num" name="user-num" required placeholder="XXXX-XXX-XXXX" maxlength="11">
+                    </p>
+                    <p>
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" name="user-password" required>
+                    </p>
+                    <p>
+                        <label for="cfm-password">CONFIRM PASSWORD</label>
+                        <input type="password" id="cfm-password" name="cfm-password" required="required">
+                    </p>
+                </fieldset>
+                <button type="submit" class="submit-btn">Create Account</button>
+                <span>
+                    <p>Already have an account?</p>
+                    <a href="https://www.google.com">Log in</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
