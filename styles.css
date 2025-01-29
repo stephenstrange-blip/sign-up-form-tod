@@ -2,17 +2,24 @@
     /* border: 1px solid black; */
 }
 
+:root {
+    --left-padding: 3rem;
+}
+
 body {
     display: flex;
     justify-content: center;
     /* overflow: hidden; */
+    background-color: rgb(0, 0, 0, .8);
 }
 
 .body-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    width: 75vw;
+    width: 70vw;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 .background {
@@ -21,7 +28,8 @@ body {
     /* background-color serves as a fallback when the image fails to load */
     background-color: wheat;
     background-image: url("assets/sign-up-bg.jpg");
-    background-size: cover;
+    background: url("assets/sign-up-bg.jpg") no-repeat center center/cover;
+    /* background-size: cover; */
     text-align: center;
     color: white;
 }
@@ -29,6 +37,7 @@ body {
 .signup-container {
     width: min(60vw, 60%);
     height: 100vh;
+    background-color: white;
 }
 
 .logo-container {
@@ -51,6 +60,11 @@ body {
     width: 5rem;
     height: 100%;
 }
+@media (max-width: 500px) {
+    .logo img {
+        display: none;
+    }
+}
 
 .logo-odin {
     font-size: 5rem;
@@ -61,11 +75,18 @@ body {
     top: 75vh;
 }
 
+fieldset {
+    box-shadow: rgb(0, 0, 0, .3) 0 .2rem .5rem;
+    border: none;
+}
+
 fieldset>div {
     display: flex;
     flex-flow: row nowrap;
+    gap: var(--left-padding);
+
     position: relative;
-    gap: 3rem;
+
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
 }
@@ -73,13 +94,97 @@ fieldset>div {
 legend {
     position: absolute;
     top: .5rem;
-    left: 1.5rem;
+    left: var(--left-padding);
+    font-size: 1.3rem;
 }
 
 legend~div>p {
-    padding-top: 1.5rem;
-    padding-left: 1.5rem;
-    /* border: 2px solid red; */
+    padding-top: 1.8rem;
+    padding-left: var(--left-padding);
+
     display: flex;
     flex-flow: column nowrap;
 }
+
+.signup-message,
+fieldset+div,
+fieldset+div+p {
+    padding-left: var(--left-padding);
+}
+
+fieldset+div,
+fieldset+div+p {
+    padding-top: 3rem;
+}
+fieldset+div+p>a:link {
+    color: rgb(89, 109, 72);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-message {
+    padding-top: 15vh;
+    padding-bottom: 2rem;
+    width: clamp(45ch, 85%, 75ch);
+
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+p>label,
+p>input {
+    font-size: .8rem;
+    width: clamp(14rem, 100%, 80vw);
+}
+
+p>input {
+    border-radius: .2rem;
+    border: 1px solid rgb(229, 231, 235);
+    padding: .2rem;
+    padding-left: .6rem;
+}
+div > p > input:not(#password, #cfm-password) {
+    box-shadow: rgb(152, 152, 152, .3) 0 0 .4rem;
+}
+
+div > p > input:not(#password, #cfm-password):focus {
+    border-color: rgba(3, 118, 226, 0.8);
+    box-shadow: rgb(3, 118, 226, 0.8) 0 0 .4rem;
+}
+
+input:valid{
+    border-color: rgba(0, 182, 0, 0.8);
+    box-shadow: rgba(0,182, 0, .8) 0 0 .4rem;
+}
+#password:invalid,
+#cfm-password:invalid {
+    border-color: rgb(220, 0, 0, .8);
+    box-shadow: rgb(220, 0, 0, .3) 0 0 .4rem;
+}
+
+.submit-btn {
+    width: 14rem;
+    height: 3rem;
+    color: white;
+    background-color: rgb(89, 109, 72);
+    border-radius: .5rem;
+    transition-duration: .4s;
+    border: none;
+}
+.submit-btn:hover {
+    background-color: rgb(89, 109, 72, .8);
+    
+}
+
+div>a:link,
+.bg-credit {
+    color: white;
+    font-size: .8rem;
+}
+
+a:visited {
+    color: rgb(72, 98, 168);
+}
+
+
