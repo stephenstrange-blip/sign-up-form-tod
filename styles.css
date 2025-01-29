@@ -16,18 +16,18 @@ body {
 }
 
 .background {
-    width: min(35vw, 35%);
+    width: min(40vw, 40%);
     height: 100vh;
     /* background-color serves as a fallback when the image fails to load */
     background-color: wheat;
     background-image: url("assets/sign-up-bg.jpg");
-    background-size: cover  ;
+    background-size: cover;
     text-align: center;
     color: white;
 }
 
 .signup-container {
-    width: min(65vw, 65%);
+    width: min(60vw, 60%);
     height: 100vh;
 }
 
@@ -51,10 +51,35 @@ body {
     width: 5rem;
     height: 100%;
 }
+
 .logo-odin {
     font-size: 5rem;
 }
+
 .bg-credit {
     position: relative;
     top: 75vh;
+}
+
+fieldset>div {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    gap: 3rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+legend {
+    position: absolute;
+    top: .5rem;
+    left: 1.5rem;
+}
+
+legend~div>p {
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-flow: column nowrap;
 }
