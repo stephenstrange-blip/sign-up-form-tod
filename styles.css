@@ -166,10 +166,10 @@ div>p>input:not(#password, #cfm-password):focus {
     box-shadow: rgb(3, 118, 226, 0.8) 0 0 .4rem;
 }
 
-input:valid {
+/* input:valid {
     border-color: rgba(0, 182, 0, 0.8);
     box-shadow: rgba(0, 182, 0, .8) 0 0 .4rem;
-}
+} */
 
 #password:invalid,
 #cfm-password:invalid {
