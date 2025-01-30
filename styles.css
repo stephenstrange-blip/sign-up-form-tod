@@ -4,7 +4,6 @@
         url('assets/font/norse-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 * {
@@ -18,7 +17,6 @@
 body {
     display: flex;
     justify-content: center;
-    /* overflow: hidden; */
     background-color: rgb(0, 0, 0, .8);
 }
 
@@ -28,17 +26,18 @@ body {
     justify-content: center;
     width: 70vw;
     height: 100vh;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 .background {
     width: min(40vw, 40%);
     height: 100vh;
+
     /* background-color serves as a fallback when the image fails to load */
     background-color: wheat;
     background-image: url("assets/sign-up-bg.jpg");
     background: url("assets/sign-up-bg.jpg") no-repeat center center/cover;
-    /* background-size: cover; */
+
     text-align: center;
     color: white;
 }
@@ -69,7 +68,7 @@ body {
     width: 5rem;
     height: 100%;
 }
-
+/* Logo Disappears under certain viewport width */
 @media (max-width: 500px) {
     .logo img {
         display: none;
@@ -108,7 +107,7 @@ legend {
     left: var(--left-padding);
     font-size: 1.3rem;
 }
-
+/* Styles all elements that will receive input */
 legend~div>p,
 legend~div>div {
     padding-top: 1.8rem;
@@ -144,14 +143,16 @@ fieldset+div+p>a:link {
     font-size: 1.3rem;
     line-height: 1.2;
 }
+
 div>label,
 p>label,
 p>input {
     font-size: .8rem;
     width: clamp(14rem, 100%, 10vw);
 }
-
-label[for=phone-num] + div > input {
+/* Phone field is separately targeted because its
+input elements are not siblings with other fields */
+label[for=phone-num]+div>input {
     width: min(5vw, 10%);
     font-size: .8rem;
     text-align: center;
@@ -159,22 +160,23 @@ label[for=phone-num] + div > input {
     box-shadow: rgb(152, 152, 152, .3) 0 0 .4rem;
     border: 1px solid rgb(229, 231, 235);
     border-radius: .2rem;
-    
+
     padding: .2rem;
 }
 
-label[for=phone-num] + div > input:focus {
+label[for=phone-num]+div>input:focus {
     border-color: rgba(3, 118, 226, 0.8);
     box-shadow: rgb(3, 118, 226, 0.8) 0 0 .4rem;
 }
 
+/* Targets all input fields aside from phone number fields */
 p>input {
     border-radius: .2rem;
     border: 1px solid rgb(229, 231, 235);
     padding: .2rem;
     padding-left: .6rem;
 }
-
+/* Targets all input fields that are not password concerned */
 div>p>input:not(#password, #cfm-password) {
     box-shadow: rgb(152, 152, 152, .3) 0 0 .4rem;
 }
