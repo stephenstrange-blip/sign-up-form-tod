@@ -21,8 +21,10 @@ body {
 }
 
 .body-container {
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: min(40vw, 40%) 1fr;
+    grid-template-rows: 1fr;
+   
     justify-content: center;
     width: 70vw;
     height: 100vh;
@@ -30,9 +32,6 @@ body {
 }
 
 .background {
-    width: min(40vw, 40%);
-    height: 100vh;
-
     /* background-color serves as a fallback when the image fails to load */
     background-color: wheat;
     background-image: url("assets/sign-up-bg.jpg");
@@ -43,8 +42,6 @@ body {
 }
 
 .signup-container {
-    width: min(60vw, 60%);
-    height: 100vh;
     background-color: white;
 }
 
