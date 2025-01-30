@@ -35,7 +35,7 @@
             </div>
 
             <div class="signup-form">
-                <form novalidate>
+                <form>
                     <fieldset>
                         <div>
                             <legend>Let's do this!</legend>
@@ -52,7 +52,7 @@
                                 </p>
                                 <p>
                                     <label for="password">PASSWORD</label>
-                                    <input type="password" id="password" name="user-password" required>
+                                    <input class="user-password" type="password" id="password" name="user-password" required>
                                 </p>
                             </div>
                             <div>
@@ -61,21 +61,29 @@
                                     <input type="text" id="last-name" name="last-name" required placeholder="Strange"
                                         maxlength="20">
                                 </p>
-                                <p>
+                                <div>
                                     <label for="phone-num">PHONE NUMBER</label>
-                                    <input type="tel" id="phone-num" name="user-num" required
-                                        placeholder="XXXX-XXX-XXXX" maxlength="11">
-                                </p>
+                                    <div>
+                                        <input class="field1" type="tel" id="phone-num" name="field1" required
+                                            onkeyup="autoTab('field1', 4, 'field2')" placeholder="XXXX" minlength="4" maxlength="4">
+                                        <input class="field2" type="tel" id="phone-num" name="field2" required
+                                            onkeyup="autoTab('field2', 3, 'field3')" placeholder="XXX" minlength="3" maxlength="3">
+                                        <input class="field3" type="tel" id="phone-num" name="field3" required
+                                            onkeyup="autoTab('field3', 4, 'user-password')" placeholder="XXXX" minlength="4"
+                                            maxlength="4">
+                                    </div>
+                                    <span class="error phone"></span>
+                                </div>
                                 <p>
                                     <label for="cfm-password">CONFIRM PASSWORD</label>
                                     <input type="password" id="cfm-password" name="cfm-password" required="required">
-                                    <span class="error"></span>
+                                    <span class="error cfm"></span>
                                 </p>
                             </div>
                         </div>
                     </fieldset>
                     <div><button type="submit" class="submit-btn">Create Account</button></div>
-                   
+
                     <p>Already have an account? <a href="htps://www.google.com">Log in</a>
                     <p>
                 </form>

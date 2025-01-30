@@ -12,7 +12,7 @@
 }
 
 :root {
-    --left-padding: 3rem;                                                                                                                                                                                                                                   
+    --left-padding: 3rem;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
     justify-content: center;
     width: 70vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
 
 .background {
@@ -109,7 +109,8 @@ legend {
     font-size: 1.3rem;
 }
 
-legend~div>p {
+legend~div>p,
+legend~div>div {
     padding-top: 1.8rem;
     padding-left: var(--left-padding);
 
@@ -143,11 +144,28 @@ fieldset+div+p>a:link {
     font-size: 1.3rem;
     line-height: 1.2;
 }
-
+div>label,
 p>label,
 p>input {
     font-size: .8rem;
-    width: clamp(14rem, 100%, 80vw);
+    width: clamp(14rem, 100%, 10vw);
+}
+
+label[for=phone-num] + div > input {
+    width: min(5vw, 10%);
+    font-size: .8rem;
+    text-align: center;
+
+    box-shadow: rgb(152, 152, 152, .3) 0 0 .4rem;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: .2rem;
+    
+    padding: .2rem;
+}
+
+label[for=phone-num] + div > input:focus {
+    border-color: rgba(3, 118, 226, 0.8);
+    box-shadow: rgb(3, 118, 226, 0.8) 0 0 .4rem;
 }
 
 p>input {
@@ -165,11 +183,6 @@ div>p>input:not(#password, #cfm-password):focus {
     border-color: rgba(3, 118, 226, 0.8);
     box-shadow: rgb(3, 118, 226, 0.8) 0 0 .4rem;
 }
-
-/* input:valid {
-    border-color: rgba(0, 182, 0, 0.8);
-    box-shadow: rgba(0, 182, 0, .8) 0 0 .4rem;
-} */
 
 #password:invalid,
 #cfm-password:invalid {
